@@ -1,5 +1,7 @@
 # vue-folder-demo 基于elementUI的el-row实现文件夹树的demo
 
+![](./folder-tree.png)
+
 ## 实现原理:
 
 ```html
