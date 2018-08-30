@@ -11,7 +11,30 @@
 树形效果原理:用padding-left样式缩进调整.
 
 
+function createLinearArray (data, level = 1) {
+        data.forEach(v => {
+          v.level = level
+          if (v.level === 1) {
+            v.expand = true
+          } else {
+            v.expand = false
+          }
+          linearArray.push(v)
+          if (v.children) {
+            createLinearArray(v.children, level + 1)
+          }
+        })
+      }
+这里的level是为了指定是多少组菜单,这样,就可以缩进效果进行调整,level越大,缩进越大.
+这里的expand为了控制显示和展示,初始化时,第一级是展示的,二级以上,都是隐藏的.
 
+
+linearArray.sort((a, b) => {
+        return a.id - b.id
+      })
+      
+      注意排序,这是为了方便按顺序的展示,这是为了按顺序展示数据
+      
 ```
 
 ## 安装

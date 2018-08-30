@@ -80,6 +80,9 @@
       /**
        * 创建一个一维数组指针指向->多维数数据元素
        * @param data
+       *
+       * 这里的level是为了指定是多少组菜单,这样,就可以缩进效果进行调整,level越大,缩进越大.
+       * 这里的expand为了控制显示和展示,初始化时,第一级是展示的,二级以上,都是隐藏的.
        */
       function createLinearArray (data, level = 1) {
         data.forEach(v => {
@@ -97,7 +100,8 @@
       }
 
       /**
-       * 注意排序,这是为了方便按顺序的展示
+       * 注意排序,这是为了方便按顺序的展示,这是为了按顺序展示数据
+       *
        */
       linearArray.sort((a, b) => {
         return a.id - b.id
@@ -119,6 +123,11 @@
       handleNodeClick (v) {
         this.renderMenu(v)
       },
+      /**
+       * 每次点击时,对expand显示隐藏进行操作
+       * @param v
+       * @param isexpand
+       */
       renderMenu (v, isexpand) {
         if (v.children) {
           v.children.forEach((vv1) => {
