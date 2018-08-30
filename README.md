@@ -1,8 +1,18 @@
-# vue-folder-demo
+# vue-folder-demo 基于elementUI的el-row实现文件夹树的demo
 
-> A Vue.js project
+## 实现原理:
 
-## Build Setup
+```html
+
+设计思路:创建一个一维数组指针指向->多维数数据元素. 为了方便用一维数组循环
+
+树形效果原理:用padding-left样式缩进调整.
+
+
+
+```
+
+## 安装
 
 ``` bash
 # install dependencies
@@ -27,4 +37,3 @@ npm run e2e
 npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
